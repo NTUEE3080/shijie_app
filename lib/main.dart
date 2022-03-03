@@ -77,6 +77,7 @@ class ModuleAutoComplete extends StatelessWidget {
   ModuleAutoComplete(this._typeAheadController, {Key? key}) : super(key: key);
 
   static const List<User> _userOptions = <User>[
+    User(code: 'EE1003', name: 'Introduction to Materials'),
     User(code: 'EE3015', name: 'Power Systems and Conversion'),
     User(code: 'EE2001', name: 'Circuit Analysis and Design'),
     User(code: 'EE3080', name: 'Design and Innovation Project'),
