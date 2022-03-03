@@ -107,7 +107,7 @@ class ModuleAutoComplete extends StatelessWidget {
             .style
             .copyWith(fontStyle: FontStyle.normal),
         decoration: InputDecoration(
-            labelText: "Please enter module code or name",
+            labelText: "Please enter module code or name: ",
             suffix: GestureDetector(
                 onTap: (){
                   this._typeAheadController.clear();
