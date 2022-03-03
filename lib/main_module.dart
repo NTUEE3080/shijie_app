@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 
-import 'dropdown_2.dart';
+import 'Index.dart';
 
 void main() => runApp(AutocompleteExampleApp());
 
@@ -15,20 +15,35 @@ class AutocompleteExampleApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Course and Index Selection'),
         ),
-        body: Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(24.0),
-              //child: Center( // to change alignment, otherwise default at the top
-              child: ModuleAutoComplete(moduleTextController),
-            ),
-            Container(
-              padding: const EdgeInsets.all(24.0),
-              child: Center(
-              child: IndexAutoComplete(),
-            ),
-            )
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              const Text('What I have:'),
+              Container(
+                padding: const EdgeInsets.all(24.0),
+                //child: Center( // to change alignment, otherwise default at the top
+                child: ModuleAutoComplete(moduleTextController),
+              ),
+              Container(
+                padding: const EdgeInsets.all(24.0),
+                child: Center(
+                child: IndexAutoComplete(),
+              )
+              ),
+              const Text('What I want:'),
+              Container(
+                padding: const EdgeInsets.all(24.0),
+                //child: Center( // to change alignment, otherwise default at the top
+                child: ModuleAutoComplete(moduleTextController),
+              ),
+              Container(
+                padding: const EdgeInsets.all(24.0),
+                child: Center(
+                  child: IndexAutoComplete(),
+                ),
+              )
+            ],
+          ),
         ),
         floatingActionButton: Visibility(
           visible: true,
@@ -94,9 +109,6 @@ class ModuleAutoComplete extends StatelessWidget {
   // how to convert a single option (User) into display string
   static String _displayStringForOption(User option) =>
       "${option.code} : ${option.name}"; //string interpolation
-
-
-
 
   @override
   Widget build(BuildContext context) {
